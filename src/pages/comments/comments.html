@@ -1,0 +1,59 @@
+<ion-header>
+
+
+  <ion-toolbar>
+
+    <ion-buttons start left>
+      <button ion-button icon-only large (click)="back()">
+        <ion-icon name="md-arrow-back" large></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title >
+      Comments
+    </ion-title>
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-item *ngFor="let comment of comments">
+      <ion-avatar item-left>
+        <img src="{{comment.avatar}}">
+      </ion-avatar>
+      <h2 class="username">{{comment.name}}</h2>
+      <p>{{comment.text}}</p>
+      <div class="timeago">{{comment.date | amTimeAgo }} <span class="reply">Reply</span></div>
+
+      <ion-note item-right>
+        <ion-icon name="ios-heart-outline"></ion-icon>
+      </ion-note>
+
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar class="toolbar-nexti">
+
+    <ion-buttons start>
+      <button ion-button color="dark" large class="button-footer">
+        <ion-icon name="ios-paper-plane"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-textarea fz-elastic placeholder="Add a comment"></ion-textarea>
+    <ion-buttons end>
+      <button ion-button color="primary" class="button-footer">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

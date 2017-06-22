@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-toolbar class="toolbar-nexti">
+    <ion-buttons start>
+      <button ion-button icon-only large (click)="goToPhoto()">
+        <ion-icon name="md-camera" large></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center><img class="logo-nexti" src="assets/instagem_nav.png"></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only large >
+        <ion-icon name="ios-paper-plane"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div #stories id="stories" padding=""></div>
+
+  <feedcomponent *ngFor="let feed of feeds; let i=index" [feed]="feed"></feedcomponent>
+
+
+</ion-content>

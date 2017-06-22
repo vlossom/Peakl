@@ -1,0 +1,85 @@
+page-likes {
+
+  background-color: white;
+  $toolbar-height: 5rem;
+
+  ion-toolbar.toolbar {
+    padding: 0;
+    min-height: $toolbar-height;
+  }
+
+  ion-segment.like-segment {
+
+    .segment-text {
+      font-size: 1.6rem;
+      color: #9C9C9C;
+      text-transform: uppercase;
+    }
+
+    .segment-button.segment-activated {
+      font-weight: bold;
+      color: #2F2F2F;
+      border-color: #2F2F2F;;
+    }
+
+    ion-segment-button.segment-button {
+      height: $toolbar-height;
+      line-height: $toolbar-height;
+    }
+
+  }
+
+  ion-list.list {
+    padding-top: 10px;
+  }
+
+  $img-size: 50px;
+  ion-item {
+
+    ion-avatar {
+      .img-avatar {
+        width: $img-size;
+        height: $img-size;
+      }
+    }
+
+    ion-thumbnail.img-thumbnail {
+
+      min-width: $img-size;
+      min-height: 55px;
+
+      img.img-thumbnail {
+        width: $img-size;
+        height: $img-size;
+      }
+    }
+
+    ion-col.col {
+      ion-thumbnail.img-thumbnail {
+        min-height: $img-size;
+      }
+    }
+
+    .grid {
+      padding-top: 0;
+      padding-left: 67px;
+
+      .col {
+        padding: 0;
+      }
+    }
+  }
+
+  ion-label {
+    white-space: normal;
+  }
+
+  .moment-ago {
+    color: #999999;
+  }
+
+  .item-grid .label {
+    margin-top: 0;
+  }
+
+}

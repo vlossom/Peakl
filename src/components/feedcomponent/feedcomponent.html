@@ -1,0 +1,66 @@
+<ion-card>
+
+  <ion-item >
+    <ion-avatar item-left>
+      <img src="{{feed.avatar}}">
+    </ion-avatar>
+    <h2 class="bold">{{feed.name}}</h2>
+    <p class="feed-location">{{feed.location}}</p>
+
+    <ion-note item-right>
+      <ion-icon name="md-more" large class="card-options"></ion-icon>
+    </ion-note>
+
+  </ion-item>
+
+  <div class="image">
+    <img [src]='sanitizer.bypassSecurityTrustResourceUrl(feed.image)' (dblclick)="animateElem( feed)" >
+    <img src="assets/instagram_heart.png" id="image{{id}}" hidden class="image-heart">
+  </div>
+
+
+  <ion-grid >
+    <ion-row>
+
+      <ion-col align-self-start>
+        <button ion-button icon-left icon-only clear large  >
+          <ion-icon color="dark" name="ios-heart"  [color]="feed.isLiked ? 'danger' : 'dark'" [isActive]="feed.isLiked"></ion-icon>
+        </button>
+        <button ion-button icon-left icon-only clear large>
+          <ion-icon color="dark" name="ios-text-outline"></ion-icon>
+        </button>
+
+        <button ion-button icon-left icon-only clear large>
+          <ion-icon color="dark"  name="ios-paper-plane"></ion-icon>
+        </button>
+
+      </ion-col>
+
+      <ion-col justify-content-end  text-right>
+        <button  text-right ion-button icon-only clear large>
+          <ion-icon  text-right color="dark" name="ios-bookmark-outline"></ion-icon>
+        </button>
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-item class="bold">
+    {{feed.likes}} likes
+  </ion-item>
+
+  <ion-card-content>
+    <p>{{feed.description}}</p>
+
+    <div class="comments" (click)="goToComments(feed)">
+      {{feed.comments.length | i18nPlural:mapping}}
+    </div>
+
+    <div class="timeago">
+      {{feed.publishDate  | amTimeAgo}}
+    </div>
+  </ion-card-content>
+
+
+</ion-card>

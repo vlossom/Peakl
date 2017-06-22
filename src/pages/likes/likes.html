@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-segment [(ngModel)]="likesSegment" mode="md" color="dark" class="like-segment">
+      <ion-segment-button value="following" class="segment-text" (click)="loadSegmentData()">
+        FOLLOWING
+      </ion-segment-button>
+      <ion-segment-button  value="you" class="segment-text" (click)="loadSegmentData()">
+        YOU
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <ion-list no-lines>
+    <div *ngFor="let like of likesList">
+      <ion-item>
+        <ion-avatar item-left>
+          <img class="img-avatar" src="{{like.avatar}}">
+        </ion-avatar>
+        <strong>{{mountFirstNames(like)}}</strong>{{mountActionMessage(like)}}<strong>{{mountLastName(like)}}</strong>{{mountLastMessage(like)}}
+        <span class="moment-ago">{{like.eventDate | amTimeAgo | instaTimeAgo}}</span>
+        <ion-thumbnail *ngIf="isSingleImage(like)" class="img-thumbnail" item-right>
+          <img class="img-thumbnail" src="{{like.posts[0].src}}">
+        </ion-thumbnail>
+
+      </ion-item>
+      <ion-item *ngIf="isGridImages(like)" class="item-grid">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let post of like.posts">
+              <ion-thumbnail class="img-thumbnail">
+                <img class="img-thumbnail" src="{{post.src}}">
+              </ion-thumbnail>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    </div>
+  </ion-list>
+
+</ion-content>

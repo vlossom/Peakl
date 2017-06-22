@@ -1,0 +1,174 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-nexti{
+
+
+
+  .toolbar-content {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-order: 4;
+    -ms-flex-order: 4;
+    order: 4;
+    min-width: 0;
+  }
+
+
+  ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+  }
+
+}
+
+
+.logo-nexti{
+  height: 35px;
+}
+
+html, body, ion-app, ion-content, ion-page, .nav-decor {
+   background-color: transparent !important;
+}
+
+.fa-icons-general {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+.ion-ios-fa-plus-square::before,
+.ion-ios-fa-plus-square-outline::before,
+.ion-md-fa-plus-square::before {
+  @extend .fa-icons-general;
+  content: "\f0fe";
+}
+
+
+.ion-ios-fa-refresh::before,
+.ion-ios-fa-refresh::before,
+.ion-md-fa-refresh::before {
+  @extend .fa-icons-general;
+  content: "\f021";
+}
+
+.ion-ios-fa-circle::before,
+.ion-ios-fa-circle::before,
+.ion-md-fa-circle::before {
+  @extend .fa-icons-general;
+  content: "\f111";
+}
+
+
+.ion-ios-fa-tumblr::before,
+.ion-ios-fa-tumblr::before,
+.ion-md-fa-tumblr::before {
+  @extend .fa-icons-general;
+  content: "\f173";
+}
+
+
+
+.bold {
+  font-weight: bold !important;
+}
+.card-complete {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: calc(100%)
+}
+
+
+ion-segment.publish {
+
+
+  background-color: #FAFAFA;
+
+  .segment-text {
+    text-transform: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  .segment-button.segment-activated {
+    font-weight: bold;
+    border-color: #488aff;
+  }
+
+}
+
+
+ion-segment.clocking-view {
+
+  background-color: white;
+
+  .segment-text {
+    text-transform: none;
+    font-size: 1.6rem;
+    color: #9C9C9C;
+    text-transform: uppercase;
+  }
+
+  .segment-button.segment-activated {
+    font-weight: bold;
+    color: #2F2F2F;
+    border-color: #2F2F2F;;
+  }
+
+}
+
+
+ion-segment.toolbar-filter {
+
+  background: white;
+
+
+  .segment-text {
+    text-transform: none;
+    font-size: 1.6rem;
+    color: #313131;
+    text-transform: uppercase;
+  }
+
+  .segment-button.segment-activated {
+    font-weight: bold;
+    color: #2F2F2F;
+  }
+
+}
+
+
+
+ion-footer::after {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
